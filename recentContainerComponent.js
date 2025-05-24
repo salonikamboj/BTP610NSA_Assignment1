@@ -7,16 +7,17 @@ import {
 } from "react-native";
 
 const RecentContainerComponent = () => {
+  const recentList = [
+    "Pop mix",
+    "Hot Hits",
+    "Upbeat Mix",
+    "Daily Wellness",
+    "Hip-Hop Central",
+    "80s Hard Rock",
+  ];
   return (
     <View style={styles.recentContainer}>
-      {[
-        "Pop mix",
-        "Hot Hits",
-        "Upbeat Mix",
-        "Daily Wellness",
-        "Hip-Hop Central",
-        "80s Hard Rock",
-      ].map((title, idx) => (
+      {recentList.map((title, idx) => (
         <TouchableOpacity key={idx} style={styles.recentTile}>
           <ImageBackground
             source={require("./assets/recents-music-icon.jpg")}
@@ -24,7 +25,7 @@ const RecentContainerComponent = () => {
           >
             <Text style={styles.recentTitle}>{title}</Text>
           </ImageBackground>
-          <Text style={styles.recentSubtitle}>Playlist       User 1</Text>
+          <Text style={styles.recentSubtitle}>Playlist User 1</Text>
         </TouchableOpacity>
       ))}
     </View>

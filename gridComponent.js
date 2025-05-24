@@ -1,38 +1,32 @@
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const GridComponent= ()=>{
-    return (
+const GridComponent = () => {
+  const gridList = [
+    "Hot Hits Canada",
+    "Pop Favourites",
+    "Hip-Hop Central",
+    "80s Hard Rock",
+    "All About Country",
+    "Upbeat mix",
+    "Daily Wellness",
+    "Release Radar",
+  ];
+  return (
     <View style={styles.grid}>
-        {[
-          "Hot Hits Canada",
-          "Pop Favourites",
-          "Hip-Hop Central",
-          "80s Hard Rock",
-          "All About Country",
-          "Upbeat mix",
-          "Daily Wellness",
-          "Release Radar",
-        ].map((title, idx) => (
-          <TouchableOpacity key={idx} style={styles.tile}>
-            <Image
-              source={require("./assets/music-icon.jpg")}
-              style={styles.tileIcon}
-            />
-            <Text style={styles.tileText}>{title}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-    );
-}
+      {gridList.map((title, idx) => (
+        <TouchableOpacity key={idx} style={styles.tile}>
+          <Image
+            source={require("./assets/music-icon.jpg")}
+            style={styles.tileIcon}
+          />
+          <Text style={styles.tileText}>{title}</Text>
+        </TouchableOpacity>
+      ))}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-
   grid: {
     flexDirection: "row",
     flexWrap: "wrap",
@@ -59,7 +53,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 14,
   },
-
 });
 
 export default GridComponent;

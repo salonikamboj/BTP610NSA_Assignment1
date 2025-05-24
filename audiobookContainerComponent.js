@@ -1,7 +1,5 @@
 import {
-  Image,
   ImageBackground,
-  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -9,22 +7,23 @@ import {
 } from "react-native";
 
 const AudioBookContainerComponent = () => {
+  const audioBookList = [
+    {
+      title: "Mastering Conversation...",
+      author: "Helen Stone",
+    },
+    {
+      title: "Control your mind and...",
+      author: "Eric Robertson",
+    },
+    {
+      title: "Ikigai: The japanese sec...",
+      author: "Hector Garcia",
+    },
+  ];
   return (
     <View style={styles.audiobooksContainer}>
-      {[
-        {
-          title: "Mastering Conversation...",
-          author: "Helen Stone",
-        },
-        {
-          title: "Control your mind and...",
-          author: "Eric Robertson",
-        },
-        {
-          title: "Ikigai: The japanese sec...",
-          author: "Hector Garcia",
-        },
-      ].map((book, idx) => (
+      {audioBookList.map((book, idx) => (
         <TouchableOpacity key={idx} style={styles.audiobookCard}>
           <ImageBackground
             source={require("./assets/audiobook-icon.jpg")}
@@ -40,7 +39,6 @@ const AudioBookContainerComponent = () => {
 };
 
 const styles = StyleSheet.create({
-
   audiobooksContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
